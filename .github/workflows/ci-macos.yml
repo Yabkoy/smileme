@@ -1,4 +1,5 @@
 name: ci-macos
+
 on:
   push:
   pull_request:
@@ -8,6 +9,11 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Testy Swift Package
+
+      - name: Build aplikacji
+        working-directory: macos/Core
+        run: swift build --product EmojiPickerApp
+
+      - name: Testy
         working-directory: macos/Core
         run: swift test

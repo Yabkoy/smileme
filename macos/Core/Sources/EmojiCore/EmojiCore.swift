@@ -50,4 +50,27 @@ public enum EmojiCore {
         for u in all where !out.contains(u) { out.append(u) }
         return out
     }
+        /// "1f44b-1f3fd" -> "👋🏽"
+    public static func string(fromHex hex: String) -> String {
+        var scalars = String.UnicodeScalarView()
+        for part in hex.split(separator: "-") {
+            if let v = UInt32(part, radix: 16), let s = Unicode.Scalar(v) {
+                scalars.append(s)
+            }
+        }
+        return String(scalars)
+    }
+
+    public static let styles: [EmojiStyle] = [
+        EmojiStyle(id: "apple", label: "Apple (iOS / macOS)", available: true),
+        EmojiStyle(id: "google", label: "Google (Android / Pixel / YouTube)", available: true),
+        EmojiStyle(id: "microsoft", label: "Microsoft (Windows / Fluent)", available: false),
+        EmojiStyle(id: "twitter", label: "Twitter / X (Twemoji)", available: true),
+        EmojiStyle(id: "samsung", label: "Samsung (One UI)", available: false),
+    ]
+}
+public struct EmojiStyle: Identifiable, Equatable {
+    public let id: String
+    public let label: String
+    public let available: Bool
 }

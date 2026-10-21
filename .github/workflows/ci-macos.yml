@@ -1,0 +1,13 @@
+name: ci-macos
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Testy Swift Package
+        working-directory: macos/Core
+        run: swift test

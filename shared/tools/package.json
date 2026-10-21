@@ -1,0 +1,17 @@
+{
+  "name": "emoji-tools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "data": "node generate_data.mjs",
+    "assets": "node build_assets.mjs"
+  },
+  "dependencies": {
+    "@twemoji/svg": "*",
+    "emoji-datasource-apple": "*",
+    "emoji-datasource-google": "*",
+    "emojibase": "*",
+    "emojibase-data": "*",
+    "sharp": "*"
+  }
+}

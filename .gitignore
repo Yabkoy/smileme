@@ -24,3 +24,8 @@ dist-ssr
 *.sw?
 public/twemoji
 public/emoji
+node_modules/
+shared/assets/
+build/
+.build/
+*.xcodeproj/xcuserdata/

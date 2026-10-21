@@ -1,0 +1,8 @@
+[
+  { "hex": "1f600", "style": "google",
+    "expect": ["assets/google/1f600.png", "assets/twitter/1f600.png"] },
+  { "hex": "2764-fe0f", "style": "google",
+    "expect": ["assets/google/2764-fe0f.png", "assets/google/2764.png", "assets/twitter/2764.png"] },
+  { "hex": "1f600", "style": "microsoft",
+    "expect": ["assets/twitter/1f600.png"] }
+]

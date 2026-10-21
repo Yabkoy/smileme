@@ -1,0 +1,7 @@
+[
+  { "query": "", "expectCountAtLeast": 1500 },
+  { "query": "heart", "mustContain": ["2764-fe0f"] },
+  { "query": "  HEART  ", "mustContain": ["2764-fe0f"] },
+  { "query": "waving hand", "mustContain": ["1f44b"] },
+  { "query": "zzzzqqqq", "expectCount": 0 }
+]

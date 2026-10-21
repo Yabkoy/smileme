@@ -1,0 +1,7 @@
+[
+  { "base": "1f44b", "tone": 0, "expect": "1f44b" },
+  { "base": "1f44b", "tone": 1, "expect": "1f44b-1f3fb" },
+  { "base": "1f44b", "tone": 3, "expect": "1f44b-1f3fd" },
+  { "base": "1f44b", "tone": 5, "expect": "1f44b-1f3ff" },
+  { "base": "1f600", "tone": 3, "expect": "1f600" }
+]

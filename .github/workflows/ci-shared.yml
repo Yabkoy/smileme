@@ -1,0 +1,23 @@
+name: ci-shared
+on:
+  push:
+  pull_request:
+
+jobs:
+  data:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: shared/tools
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - run: npm run data
+      - name: Sprawdź liczbę emoji
+        run: node -e "const d=require('../data/emoji.json'); if(d.length<1500) throw new Error('za mało emoji: '+d.length); console.log(d.length)"
+      - run: npm run assets
+      - name: Sprawdź grafiki
+        run: test -f ../assets/twitter/1f600.png && test -f ../assets/google/1f600.png
